@@ -1,6 +1,7 @@
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ExpenseDashboard from './components/ExpenseDashboard';
 
 const Home = () => (
     <p>Home</p>
@@ -22,7 +23,7 @@ const Routes = () => (
     <BrowserRouter>
         <div>
         <Switch>
-            <Route path="/" component={Home} exact/>
+            <Route path="/" component={ExpenseDashboard} exact/>
             <Route path="/route-1" component={Route1}/>
             <Route component={NotFound}/>
         </Switch>
