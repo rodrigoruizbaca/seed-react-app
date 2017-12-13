@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ExpenseItem = ({description = '', amount = 0, createdAt = 0}) => (
+const ExpenseItem = (props) => (
     <div>
-        <h3>{description}</h3>
-        <p>{amount}-{createdAt}</p>
+        <h3>{props.expense.description}</h3>
+        <p>{props.expense.amount}-{props.expense.createdAt}</p>
     </div>
 );
 
