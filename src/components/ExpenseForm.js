@@ -1,14 +1,16 @@
 import React from 'react';
 import {addExpense} from '../actions/expenses';
 import {connect} from 'react-redux';
+import moment from 'moment';
 
-class ExpenseFormComponent extends React.Component {
+export class ExpenseFormComponent extends React.Component {
 
 
 
     state =  {
         description: '',
-        amount: 0
+        amount: 0,
+        createdAt: moment()
     };
 
     onDescriptionChange = (e) => {
@@ -42,6 +44,10 @@ class ExpenseFormComponent extends React.Component {
                     <label>
                         Amount:
                         <input type="number" value={this.state.amount} onChange={this.onAmountChange}/>
+                    </label>
+                    <label>
+                        createdAt:
+                        <input type="number" value={this.state.createdAt}/>
                     </label>
                     <input type="submit" value="Submit" />
                 </form>

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should create expense form 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Description:
+      <input
+        autoFocus={true}
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </label>
+    <label>
+      Amount:
+      <input
+        onChange={[Function]}
+        type="number"
+        value={0}
+      />
+    </label>
+    <label>
+      createdAt:
+      <input
+        type="number"
+        value={"1970-01-01T00:00:00.000Z"}
+      />
+    </label>
+    <input
+      type="submit"
+      value="Submit"
+    />
+  </form>
+</div>
+`;
