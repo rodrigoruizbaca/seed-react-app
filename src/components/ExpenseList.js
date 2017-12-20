@@ -2,22 +2,28 @@ import React from 'react';
 import {connect} from 'react-redux';
 import ExpenseItem from './ExpenseListItem';
 import expenseSelector from '../selectors/expenses';
+import {populateExpenses} from '../actions/expenses';
 
-export const ExpenseList = (props) => {
-    console.log(props);
-    return (
-        <div>
-            {
-                props.expenses.map((expense) => {
-                    return <ExpenseItem key={expense.id} expense={expense}/>
-                })
-            }
-        </div>
-    );
-};
+class ExpenseList extends React.Component {
+    render() {
+        return (
+            <div>
+                {
+                    this.props.expenses.map((expense) => {
+                        return <ExpenseItem key={expense.id} expense={expense}/>
+                    })
+                }
+            </div>
+        );
+    }
+
+    componentDidMount() {
+        this.props.dispatch(populateExpenses());
+    }
+}
 
 const mapStateToProps = (state) => {
-    return {'expenses': expenseSelector(state.expenses, state.filters)};
+    return {'expenses': state.expenses};//expenseSelector(state.expenses, state.filters)};
 };
 
 

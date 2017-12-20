@@ -4,6 +4,10 @@ const expensesReducer = (state = [], action) => {
         case 'GET_EXPENSES': {
             return state;
         }
+        case 'SET_EXPENSES': {
+            const expenses = action.expenses;
+            return expenses;
+        }
         case 'ADD_EXPENSE': {
             const expense = action.expense;
             return [...state, expense];

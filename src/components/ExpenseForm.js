@@ -1,5 +1,5 @@
 import React from 'react';
-import {addExpense} from '../actions/expenses';
+import {startAddExpense} from '../actions/expenses';
 import {connect} from 'react-redux';
 import moment from 'moment';
 
@@ -30,7 +30,7 @@ export class ExpenseFormComponent extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const expense = {description: this.state.description, amount: this.state.amount};
-        this.props.dispatch(addExpense(expense));
+        this.props.dispatch(startAddExpense(expense));
     };
 
     render() {
@@ -47,7 +47,7 @@ export class ExpenseFormComponent extends React.Component {
                     </label>
                     <label>
                         createdAt:
-                        <input type="number" value={this.state.createdAt}/>
+                        <input type="number" defaultValue={this.state.createdAt}/>
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
